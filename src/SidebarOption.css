@@ -1,0 +1,28 @@
+.sidebarOption {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidebarOption:hover {
+    background-color: #e8f5f3;
+    border-radius: 30px;
+    color: var(--twitter-color);
+    transition: color 0.1s ease-out;
+}
+
+/* MuiSvgIcon-root is the preset syntax that MUI gives to their icons.
+That can be found in their documentation and I'm targeting that to style the icon */
+.sidebarOption > .MuiSvgIcon-root {
+    padding: 20px;
+}
+
+.sidebarOption > h2 {
+    font-weight: 800;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.sidebarOption--active {
+    color: var(--twitter-color);
+}
