@@ -16,6 +16,7 @@ const Post = forwardRef(({
     text,
     image,
     avatar,
+    timestamp
 }, ref) => {
     return (
         <div className="post" ref={ref}>
