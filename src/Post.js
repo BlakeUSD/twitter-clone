@@ -7,15 +7,15 @@ import { Avatar } from '@mui/material';
 import React, { forwardRef } from 'react';
 import "./Post.css";
 
-// I've run npm install react-flip-move. Afterwhich I imported forwardRef from react which 
-// allows me to use react-flip-move to give the animation a better aesthetic
+/* I've run npm install react-flip-move. Afterwhich I imported forwardRef from react which 
+allows me to use react-flip-move to give the animation a better aesthetic */
 const Post = forwardRef(({
     displayName,
     username,
     verified,
     text,
     image,
-    avatar
+    avatar,
 }, ref) => {
     return (
         <div className="post" ref={ref}>
@@ -30,6 +30,7 @@ const Post = forwardRef(({
                             <span className="post__headerSpecial">
                                 {verified && <VerifiedIcon className="post__badge" />}
                                 {" "}@{username}
+                                {" • "}{new Date().toUTCString().slice(5, 11)}
                             </span>
                         </h3>
                     </div>

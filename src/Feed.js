@@ -8,11 +8,13 @@ import FlipMove from 'react-flip-move';
 function Feed() {
     const [posts, setPosts] = useState([]);
 
-    // the useEffect will search through our firebase database
-    // map through each document, map all of the data from each document
-    // and pass that data into our Post component variables
+    /* the useEffect will search through our firebase database 
+    map through each document, map all of the data from each document
+    and pass that data into our Post component variables */
     useEffect(() => {
-        db.collection('posts').onSnapshot((snapshot) => (
+        db.collection('posts')
+        .orderBy('timestamp', 'desc')
+        .onSnapshot((snapshot) => (
             setPosts(snapshot.docs.map((doc) => doc.data()))
         ));
     }, []);
@@ -26,15 +28,16 @@ function Feed() {
             <TweetBox />
 
             <FlipMove>
-                {posts.map(post => (
+                {posts.map(({avatar, displayName, image, text, username, verified, timestamp}) => (
                     <Post
-                        key={post.text}
-                        displayName={post.displayName}
-                        username={post.username}
-                        verified={post.verified}
-                        text={post.text}
-                        avatar={post.avatar}
-                        image={post.image}
+                        key={text}
+                        displayName={displayName}
+                        username={username}
+                        verified={verified}
+                        text={text}
+                        avatar={avatar}
+                        image={image}
+                        time={timestamp}
                     />
                 ))}
             </FlipMove>

@@ -20,7 +20,7 @@
     font-weight: 800;
 }
 
-/* Hide scrollbar for Chrome, Safar and Opera */
+/* Hide scrollbar for Chrome, Safari and Opera */
 .feed::-webkit-scrollbar {
     display: none;
 }
