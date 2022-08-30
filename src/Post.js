@@ -16,7 +16,7 @@ const Post = forwardRef(({
     text,
     image,
     avatar,
-    timestamp
+    time
 }, ref) => {
     return (
         <div className="post" ref={ref}>
@@ -31,7 +31,7 @@ const Post = forwardRef(({
                             <span className="post__headerSpecial">
                                 {verified && <VerifiedIcon className="post__badge" />}
                                 {" "}@{username}
-                                {" • "}{new Date().toUTCString().slice(5, 11)}
+                                {" • "}{time.slice(5, 11)}
                             </span>
                         </h3>
                     </div>

@@ -1,5 +1,5 @@
-// the variation in firebase import is to allow for backward compatibility
-// the standard import was giving an error.
+/* the variation in firebase import is to allow for backward compatibility
+the standard import was giving an error. */
 import firebase from "firebase/compat/app"
 import "firebase/compat/auth"
 import "firebase/compat/firestore"

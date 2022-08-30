@@ -13,10 +13,10 @@ function Feed() {
     and pass that data into our Post component variables */
     useEffect(() => {
         db.collection('posts')
-        .orderBy('timestamp', 'desc')
-        .onSnapshot((snapshot) => (
-            setPosts(snapshot.docs.map((doc) => doc.data()))
-        ));
+            .orderBy('timestamp', 'desc')
+            .onSnapshot((snapshot) => (
+                setPosts(snapshot.docs.map((doc) => doc.data()))
+            ));
     }, []);
 
     return (
@@ -28,7 +28,7 @@ function Feed() {
             <TweetBox />
 
             <FlipMove>
-                {posts.map(({avatar, displayName, image, text, username, verified, timestamp}) => (
+                {posts.map(({ avatar, displayName, image, text, username, verified, timestamp }) => (
                     <Post
                         key={text}
                         displayName={displayName}
@@ -37,7 +37,7 @@ function Feed() {
                         text={text}
                         avatar={avatar}
                         image={image}
-                        time={timestamp}
+                        time={new Date(timestamp?.seconds * 1000).toUTCString()}
                     />
                 ))}
             </FlipMove>

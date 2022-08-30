@@ -1,9 +1,9 @@
 import React from 'react'
 import "./SidebarOption.css"
 
-// in the SidebarOption function we've destructured the prop with the {}
-// and passed in variables which we'll use in Sidebar.js. This is done to make
-// the component reusable
+/* in the SidebarOption function we've destructured the prop with the {}
+and passed in variables which we'll use in Sidebar.js. This is done to make
+the component reusable */
 
 function SidebarOption({ active, text, Icon }) {
     return (
